@@ -1,0 +1,3 @@
+keyword=$1
+#optpath=$2
+grep --color=auto -in $keyword ./* #$optpath

@@ -1,0 +1,18 @@
+################################################################
+mkdir                           ../newsim_dir
+################################################################
+cp -r     run_a                 ../newsim_dir/run_a
+################################################################
+cp        a_inlet_.bin          ../newsim_dir/a_inlet_.bin 
+################################################################
+cp        agriglia.dat          ../newsim_dir/agriglia.dat
+cp        agriglia_pipe.dat     ../newsim_dir/agriglia_pipe.dat
+################################################################
+cp        aje000000.bin         ../newsim_dir/aje000000.bin
+cp        api000000.bin         ../newsim_dir/api000000.bin
+cp        apj000000.bin         ../newsim_dir/apj000000.bin
+cp        app000000.bin         ../newsim_dir/app000000.bin
+#################################################################
+#cp        arestartpart.bin      ../newsim_dir/arestartpart.bin
+#cp        arestartpart_pipe.bin ../newsim_dir/arestartpart_pipe.bin
+#################################################################

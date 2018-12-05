@@ -1,0 +1,2 @@
+got_pwd=$(< ~/bin/got_pwd)
+cp -r $1 $got_pwd/$2

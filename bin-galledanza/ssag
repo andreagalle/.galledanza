@@ -1,0 +1,5 @@
+ulimit -s unlimited
+KMP_STACKSIZE=16000000
+export KMP_STACKSIZE
+nohup ./$2 >> $2.log &
+tail -f $2.log

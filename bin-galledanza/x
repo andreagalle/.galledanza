@@ -1,0 +1,5 @@
+#xterm -sb -fn 9x15 -bg black -fg cyan4 &
+#xterm -ls -sb -fn 10x20 -bg black -fg green &
+xterm -sb -fn 10x20 -bg black -fg cyan4 &
+#xterm -ls -sb -fn 10x20 -bg black -fg green &
+

@@ -1,0 +1,3 @@
+#GOT_PWD=$(pwd -P)
+#export GOT_PWD
+pwd -P > ~/bin/got_pwd

@@ -1,0 +1,5 @@
+#nohup make $1 > make.log &
+make $1 > make.log  &
+#tail -f make.log | sed '/compilation successfull./ q'
+#echo " "
+tail -f --pid=$(pgrep make) make.log 
