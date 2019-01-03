@@ -1,0 +1,2 @@
+#gfortran $1.f -O2 -fdefault-real-8 -o $1
+ifort $1.f90 -O3 -mcmodel=large -i-dynamic -r8 -convert big_endian -o $1
