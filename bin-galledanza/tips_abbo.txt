@@ -16,42 +16,42 @@ ANS   : In bash you can use extglob:
 ----------------------------------------------------------------
 Alcuni comandi utili per agire su file:
 
-	//////////////////////////////////////////////////////
-	Estrarre righe contenenti una certa stringa da un file
+    //////////////////////////////////////////////////////
+    Estrarre righe contenenti una certa stringa da un file
 
-		grep spostamento vedo > oscillazione_parete.dat 
-    
+        grep spostamento vedo > oscillazione_parete.dat 
+
     Estrae le righe contenenti "spostamento" e le appende 
     in un file oscillazione_parete.dat
 
-	//////////////////////////////////////////////////////
-	Estrarre dal file appena generato una qualsiasi colonna 
+    //////////////////////////////////////////////////////
+    Estrarre dal file appena generato una qualsiasi colonna 
     e stamparla su un nuovo file
 
-		awk '{print $6}' oscillazione_parete.dat > oscillazione.dat 
+        awk '{print $6}' oscillazione_parete.dat > oscillazione.dat 
     
     Estrae la sesta colonna dal file "oscillazione_parete.dat 
     e la stampa in "oscillazione.dat"
 
-	//////////////////////////////////////////////////////
-	Concatenare due file
-		
-		cat file1.txt file2.txt > new.txt
+    //////////////////////////////////////////////////////
+    Concatenare due file
+    
+        cat file1.txt file2.txt > new.txt
 
-	//////////////////////////////////////////////////////
-	Stampare i valori di una certa colonna di un file in 
+    //////////////////////////////////////////////////////
+    Stampare i valori di una certa colonna di un file in 
     un altro file a partire da un certo valore identificato 
     da una condizione
 
-		awk '{if ($1 >= 5.2e-02) print $1}' tempi.dat > tempi_vero.dat 
+    	awk '{if ($1 >= 5.2e-02) print $1}' tempi.dat > tempi_vero.dat 
         
     Copia i valori della prima colonna del file "tempi.dat" 
     se questi sono maggiori o uguali di una certa soglia, in
     un altro file "tempi_vero.dat"
 
-	//////////////////////////////////////////////////////
-	Unire le colonne di due file diversi
+    //////////////////////////////////////////////////////
+    Unire le colonne di due file diversi
 	
-		paste -d' ' file1 file2 > file3
+        paste -d' ' file1 file2 > file3
     
     unisce i due file "file1" e "file2" per colonne
