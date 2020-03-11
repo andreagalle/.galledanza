@@ -1,0 +1,2 @@
+tail -f $(ls -tr *.out | tail -1)
+

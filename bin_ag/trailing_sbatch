@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ "$#" -lt 2 ]; then
+    echo "Illegal number of parameters. Give 2 or 3 parameters as follows"
+    echo "./trailing_sbatch <submit_script> <number_of_jobs> [<initial_afterok_jobid>]"
+    exit 1
+fi
+
+SUB_SCRIPT=$1
+N_JOBS=$2
+
+echo "Submitting executable $SUB_SCRIPT for $N_JOBS times"
+
+echo "Submission number: 1"
+
+if [ -z "$3" ]; then
+    echo "sbatch $SUB_SCRIPT > temp.sbatch"
+    sbatch $SUB_SCRIPT > temp.sbatch
+else
+    echo "sbatch $SUB_SCRIPT --dependency=afterany:$3 > temp.sbatch"
+    sbatch --dependency=afterany:$3 $SUB_SCRIPT  > temp.sbatch
+fi
+
+JOBID=$(cat temp.sbatch | cut -d " " -f4)
+
+for i in $(seq 2 $N_JOBS); do
+  echo "Submission number: $i"
+  echo "sbatch $SUB_SCRIPT --dependency=afterany:$JOBID > temp.sbatch"
+  sbatch --dependency=afterany:$JOBID $SUB_SCRIPT > temp.sbatch
+  JOBID=$(cat temp.sbatch | cut -d " " -f4)
+done
+
+/bin/rm -f temp.sbatch

@@ -1,0 +1,1 @@
+nohup rsync -vaPuz *_2pp gallegati@10.60.160.28:/var/services/homes/gallegati/gallegati-si-ftac-2019 >> gallegati-si-ftac-2019-rsync.log
