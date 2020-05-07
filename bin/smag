@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ulimit -s unlimited
+
+OMP_NUM_THREADS=$1
+export OMP_NUM_THREADS
+
+OMP_STACKSIZE=16000000
+export OMP_STACKSIZE
+
+exe=$2
+log=$2.log
+
+nohup ./$exe >> $log &
+
+job=${exe:0:15}
+
+tail -f --pid=$(pgrep $job) $log
+
+tail -n 100 $log | mail -s "$exe" andrea.gallegati@uniroma1.it

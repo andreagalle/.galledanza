@@ -1,0 +1,35 @@
+#!/bin/bash
+
+galledanza_dir=$PWD
+
+cat <<EOT >> ~/.bash_profile
+
+# added by galledanza 0.0.0 installer
+
+if [ -f $galledanza_dir/.bash_profile ]; then
+	. $galledanza_dir/.bash_profile 
+fi
+
+EOT
+
+cat <<EOT >> ~/.bashrc 
+
+# added by galledanza 0.0.0 installer
+
+if [ -f $galledanza_dir/.bashrc ]; then
+	. $galledanza_dir/.bashrc
+fi
+
+EOT
+
+cat <<EOT >> ~/.vimrc 
+
+# added by galledanza 0.0.0 installer
+
+if [ -f $galledanza_dir/.vimrc ]; then
+	. $galledanza_dir/.vimrc
+fi
+
+EOT
+
+. $galledanza_dir/config

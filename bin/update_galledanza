@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "ciao"
+
+galledanza_dir=$PWD
+
+. $galledanza_dir/.bash_profile 
+. $galledanza_dir/.bashrc
+. $galledanza_dir/.vimrc
+. $galledanza_dir/config

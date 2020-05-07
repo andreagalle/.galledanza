@@ -1,7 +1,18 @@
-#!/bin/bash
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
 
 alias l='ls -lrth --color'
-alias ssh='ssh -X'
+alias ll='ls -lrtha --color'
+#alias ssh='ssh -X'
 alias cl='clear'
 alias grep='grep --color=auto'
 alias bp='vi .bashrc'
