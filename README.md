@@ -1,6 +1,8 @@
 # galledanza-pkg
 Self-installing package to automatically set user defined commands &amp; preferences (aliases, etc...)
 
+![alt text](/MoscowTimes.png)
+
 ## setting up email alerts
 
 1. goto & edit the folllowing `vi /etc/exim4/update-exim4.conf.conf` 
