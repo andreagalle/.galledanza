@@ -1,4 +1,4 @@
-# galledanza-pkg
+# galledanza package
 Self-installing package to automatically set user defined commands &amp; preferences (aliases, etc...)
 
 ![alt text](/MoscowTimes.png)
