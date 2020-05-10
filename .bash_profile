@@ -22,6 +22,10 @@ fi
 
 export PATH
 
+if [ -f $galledanza_dir/.config ]; then
+	. $galledanza_dir/.config
+fi
+
 PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
 export PS1
