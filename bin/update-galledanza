@@ -1,7 +1,22 @@
 #!/bin/bash
 
-echo "ciao"
+echo ""
+echo "...updating galledanza package from version 0.0.0"
+echo ""
+
+cd $galledanza_dir
+
+#git checkout master
+git checkout self-install-update
+git pull
 
 . $galledanza_dir/.bash_profile 
 . $galledanza_dir/.bashrc
 . $galledanza_dir/.config
+
+cd $OLDPWD
+
+echo ""
+echo "...galledanza package updated to version 0.1.0"
+echo ""
+
