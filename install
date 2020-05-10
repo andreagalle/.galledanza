@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo ""
-echo "...installing galledanza package version 0.0.0"
+echo "...installing galledanza package `git describe --tags`"
 echo ""
 
 galledanza_dir=$PWD
@@ -12,7 +12,7 @@ echo ""
 
 cat <<EOT >> ~/.bash_profile
 
-# added by galledanza 0.0.0 installer
+# added by galledanza `git describe --tags` installer
 
 if [ -f $galledanza_dir/.bash_profile ]; then
 	. $galledanza_dir/.bash_profile 
@@ -34,7 +34,7 @@ echo ""
 
 cat <<EOT >> ~/.bashrc 
 
-# added by galledanza 0.0.0 installer
+# added by galledanza `git describe --tags` installer
 
 if [ -f $galledanza_dir/.bashrc ]; then
 	. $galledanza_dir/.bashrc
@@ -56,7 +56,7 @@ echo ""
 
 cat <<EOT >> ~/.vimrc 
 
-" added by galledanza 0.0.0 installer
+" added by galledanza `git describe --tags` installer
 
 function! SomeCheck()
    if filereadable("$galledanza_dir/.vimrc")
