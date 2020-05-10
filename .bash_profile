@@ -11,7 +11,7 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 
-galledanza_dir=$PWD
+galledanza_dir=`dirname "${BASH_SOURCE[0]}"`
 
 export galledanza_dir
 
@@ -20,7 +20,9 @@ if [ -d $galledanza_dir/bin ] ; then
     PATH=$galledanza_dir/bin:"${PATH}"
 fi
 
-PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$"
+export PATH
+
+PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
 export PS1
 

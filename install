@@ -16,6 +16,8 @@ fi
 
 EOT
 
+. ~/.bash_profile
+
 cat $galledanza_dir/.bash_profile
 
 echo ""
@@ -35,6 +37,8 @@ if [ -f $galledanza_dir/.bashrc ]; then
 fi
 
 EOT
+
+. ~/.bashrc
 
 cat $galledanza_dir/.bashrc
 
@@ -65,15 +69,15 @@ echo "...user $galledanza_dir/.vimrc installed."
 echo ""
 
 echo ""
-echo "...setting custom $galledanza_dir/config"
+echo "...setting custom $galledanza_dir/.config"
 echo ""
 
-. $galledanza_dir/config
+. $galledanza_dir/.config
 
-cat $galledanza_dir/config
+cat $galledanza_dir/.config
 
 echo ""
-echo "...user $galledanza_dir/config set."
+echo "...user $galledanza_dir/.config set."
 echo ""
 
 echo "...the galledanza package installation is completed."
