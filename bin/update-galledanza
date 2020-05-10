@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd $galledanza_dir
+
+echo ""
+echo "...updating galledanza package from `git describe --tags`"
+echo ""
+
+git checkout master
+git pull
+
+. $galledanza_dir/.bash_profile 
+. $galledanza_dir/.bashrc
+. $galledanza_dir/.config
+
+echo ""
+echo "...galledanza package updated to `git describe --tags`"
+echo ""
+
+cd $OLDPWD
+

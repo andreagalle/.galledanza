@@ -1,0 +1,2 @@
+squeue -u agallega --format="%10i%10u%15a%20j%5t%25R%10M%13l%8D%5C"
+

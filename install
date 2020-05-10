@@ -1,0 +1,89 @@
+#!/bin/bash
+
+echo ""
+echo "...installing galledanza package `git describe --tags`"
+echo ""
+
+galledanza_dir=$PWD
+
+echo ""
+echo "...installing custom $galledanza_dir/.bash_profile"
+echo ""
+
+cat <<EOT >> ~/.bash_profile
+
+# added by galledanza `git describe --tags` installer
+
+if [ -f $galledanza_dir/.bash_profile ]; then
+	. $galledanza_dir/.bash_profile 
+fi
+
+EOT
+
+. ~/.bash_profile
+
+cat $galledanza_dir/.bash_profile
+
+echo ""
+echo "...user $galledanza_dir/.bash_profile installed."
+echo ""
+
+echo ""
+echo "...installing custom $galledanza_dir/.bashrc"
+echo ""
+
+cat <<EOT >> ~/.bashrc 
+
+# added by galledanza `git describe --tags` installer
+
+if [ -f $galledanza_dir/.bashrc ]; then
+	. $galledanza_dir/.bashrc
+fi
+
+EOT
+
+. ~/.bashrc
+
+cat $galledanza_dir/.bashrc
+
+echo ""
+echo "...user $galledanza_dir/.bashrc installed."
+echo ""
+
+echo ""
+echo "...installing custom $galledanza_dir/.vimrc"
+echo ""
+
+cat <<EOT >> ~/.vimrc 
+
+" added by galledanza `git describe --tags` installer
+
+function! SomeCheck()
+   if filereadable("$galledanza_dir/.vimrc")
+       so "$galledanza_dir/.vimrc"
+   endif
+endfunction
+
+EOT
+
+cat $galledanza_dir/.vimrc
+
+echo ""
+echo "...user $galledanza_dir/.vimrc installed."
+echo ""
+
+echo ""
+echo "...setting custom $galledanza_dir/.config"
+echo ""
+
+. $galledanza_dir/.config
+
+cat $galledanza_dir/.config
+
+echo ""
+echo "...user $galledanza_dir/.config set."
+echo ""
+
+echo "...the galledanza package installation is completed."
+echo ""
+

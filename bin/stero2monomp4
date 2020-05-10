@@ -1,0 +1,1 @@
+ffmpeg -i $1 -strict -2 -filter_complex "amerge,pan=stereo:c0<c0+c2:c1<c1+c3" mono_$1

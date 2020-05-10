@@ -1,7 +1,13 @@
+#!/bin/bash
+
 ulimit -s unlimited
+
 OMP_NUM_THREADS=$1
 export OMP_NUM_THREADS
-KMP_STACKSIZE=16000000
-export KMP_STACKSIZE
+
+OMP_STACKSIZE=16000000
+export OMP_STACKSIZE
+
 nohup ./$2 >> $2.log &
+
 tail -f --pid=$(pgrep $2) $2.log

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SHFITER=$2
+
+for i in $1*
+do
+  OLDNAME=$i
+#  echo $OLDNAME
+  OLDITER="$(echo $OLDNAME | sed -e s/[^0-9]//g)"
+#  echo $OLDITER
+  NEWITER=$(($((10#$OLDITER)) + $((10#$SHFITER))))
+#  echo $NEWITER
+  NEWITER=$(printf "%06d" $NEWITER)
+#  echo $NEWITER
+  NEWNAME="$(echo $OLDNAME | sed -e s/$OLDITER/$NEWITER/g)"
+#  echo $NEWNAME
+  echo "mv $OLDNAME $NEWNAME"
+  mv -- "$i" "$NEWNAME"
+done
