@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $galledanza_dir
+cd $galledanza_dir ; oldpwd=$OLDPWD
 
 echo ""
 echo "...updating galledanza package from `git describe --tags`"
@@ -11,9 +11,8 @@ git pull
 
 . $galledanza_dir/.bash_profile 
 
-echo ""
 echo "...galledanza package updated to `git describe --tags`"
 echo ""
 
-cd $OLDPWD
+cd $oldpwd
 
