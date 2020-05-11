@@ -5,7 +5,9 @@ Self-installing package to automatically set user defined commands &amp; prefere
 
 ## package installation
 
-This package require a minimal installation, meant not to change along time and to be very simple to update. The few steps to setup everything are just the following:
+This package requires a minimal installation, meant not to change along time and to be very simple to update.
+
+The few steps to setup everything are just the following:
 
 ```
 git clone https://github.com/andreagalle/.galledanza.git
