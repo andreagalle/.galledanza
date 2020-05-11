@@ -10,8 +10,6 @@ git checkout master
 git pull
 
 . $galledanza_dir/.bash_profile 
-. $galledanza_dir/.bashrc
-. $galledanza_dir/.config
 
 echo ""
 echo "...galledanza package updated to `git describe --tags`"
