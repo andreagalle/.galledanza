@@ -58,11 +58,9 @@ cat <<EOT >> ~/.vimrc
 
 " added by galledanza `git describe --tags` installer
 
-function! SomeCheck()
-   if filereadable("$galledanza_dir/.vimrc")
-       so "$galledanza_dir/.vimrc"
-   endif
-endfunction
+if filereadable("$galledanza_dir/.vimrc")
+    so $galledanza_dir/.vimrc
+endif
 
 EOT
 
