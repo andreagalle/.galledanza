@@ -12,7 +12,7 @@ The few steps to setup everything are just the following:
 ```
 git clone https://github.com/andreagalle/.galledanza.git
 cd .galledanza
-. install
+source ./install
 ```
 
 remember do not `./install` to have it immediately effective. At this point everything is setup, just play around and if you want to update the package you just have to type `update-galledanza` from wherever you are!
