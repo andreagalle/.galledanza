@@ -1,5 +1,14 @@
 # .bash_profile
 
+if [[ "$HPC_SYSTEM" =~ ^(marconi|galileo|m100)$ || "$HOSTNAME" =~ ^(menrva1)$ ]]; then
+   module load git
+else
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+fi
+
 galledanza_dir=`dirname "${BASH_SOURCE[0]}"`
 
 export galledanza_dir
@@ -7,10 +16,6 @@ export galledanza_dir
 # set PATH so it includes galledanza's private bin
 if [ -d $galledanza_dir/bin ] ; then
     PATH=$galledanza_dir/bin:"${PATH}"
-fi
-
-if [[ "$HPC_SYSTEM" =~ ^(marconi|galileo|m100)$ || "$HOSTNAME" =~ ^(menrva1)$ ]]; then
-   module load git
 fi
 
 export PATH
