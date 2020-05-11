@@ -1,13 +1,5 @@
 # .bashrc
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
 # User specific aliases and functions
 
 alias l='ls -lrth --color'
@@ -30,7 +22,7 @@ alias vvv='tail -f *[^make].log'
 alias mmm='simlog=$(ls | sort -V | tail -n 1); tail -f $simlog'
 alias mmake='make -j8'
 
-alias -- update-galledanza ='. update-galledanza'
+alias -- update-galledanza='. update-galledanza'
 
 alias came='ssh -C gallegati@menrva1.dima.uniroma1.it'
 alias cama='ssh -C agallega@login.marconi.cineca.it'
