@@ -9,6 +9,10 @@ if [ -d $galledanza_dir/bin ] ; then
     PATH=$galledanza_dir/bin:"${PATH}"
 fi
 
+if [[ "$HPC_SYSTEM" =~ ^(marconi|galileo|m100)$ || "$HOSTNAME" =~ ^(menrva1)$ ]]; then
+   module load git
+fi
+
 export PATH
 
 if [ -f $galledanza_dir/.config ]; then
