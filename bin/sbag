@@ -5,9 +5,22 @@ ulimit -s unlimited
 OMP_NUM_THREADS=$1
 export OMP_NUM_THREADS
 
+unset KMP_STACKSIZE
+
+if [[ "$HPC_SYSTEM" =~ ^(marconi|galileo|m100)$ || "$HOSTNAME" =~ ^(menrva1|fatnode|flu10|flu4)$ ]]; then
+OMP_STACKSIZE=32000000
+else
 OMP_STACKSIZE=16000000
+fi
 export OMP_STACKSIZE
 
-nohup ./$2 >> $2.log &
+exe=$2
+log=$exe.log
 
-tail -f --pid=$(pgrep $2) $2.log
+nohup ./$exe >> $log 2>&1 &
+
+sleep 1
+
+job=${exe:0:15}
+
+tail -f --pid=$(pgrep $job) $log
