@@ -24,7 +24,11 @@ if [ -f $galledanza_dir/.config ]; then
 	. $galledanza_dir/.config
 fi
 
+if [ -z ${HPC_SYSTEM+x} ] ; then
 PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
+else
+PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]$HPC_SYSTEM:\[\033[33;1m\]\W\[\033[m\]\$ "
+fi
 
 export PS1
 
